@@ -1,0 +1,550 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems - Minimal Mistakes Development Test Site</title>
+
+
+
+
+<meta name="description" content="Some time ago. I started a blog using Github pages and Jekyll.Since I didn’t like any of the default themes I decided to use the modern and clean Minimal Mistakes theme.Back then (and unfortunately still today when using a Github user/organization page), in order to use the theme, it was necessary to fork the repo and modify the relevant files.This method basically went well until I first tried to update the theme, got overwhelmed by merge conflicts and basically lost interest in the maintenance.">
+
+
+
+
+<meta name="author" content="Your Name">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Minimal Mistakes Development Test Site">
+<meta property="og:title" content="Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems">
+
+
+  <link rel="canonical" href="https://ma-bru.github.io/blog/blog/jekyll-gh-pages-mm-gem/">
+  <meta property="og:url" content="https://ma-bru.github.io/blog/blog/jekyll-gh-pages-mm-gem/">
+
+
+
+  <meta property="og:description" content="Some time ago. I started a blog using Github pages and Jekyll.Since I didn’t like any of the default themes I decided to use the modern and clean Minimal Mistakes theme.Back then (and unfortunately still today when using a Github user/organization page), in order to use the theme, it was necessary to fork the repo and modify the relevant files.This method basically went well until I first tried to update the theme, got overwhelmed by merge conflicts and basically lost interest in the maintenance.">
+
+
+
+  <meta name="twitter:site" content="@mmistakes">
+  <meta name="twitter:title" content="Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems">
+  <meta name="twitter:description" content="Some time ago. I started a blog using Github pages and Jekyll.Since I didn’t like any of the default themes I decided to use the modern and clean Minimal Mistakes theme.Back then (and unfortunately still today when using a Github user/organization page), in order to use the theme, it was necessary to fork the repo and modify the relevant files.This method basically went well until I first tried to update the theme, got overwhelmed by merge conflicts and basically lost interest in the maintenance.">
+  <meta name="twitter:url" content="https://ma-bru.github.io/blog/jekyll-gh-pages-mm-gem/">
+
+  
+    <meta name="twitter:card" content="summary">
+    
+  
+
+  
+    <meta name="twitter:creator" content="@Your Name">
+  
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2017-10-03T00:00:00+02:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Your Name",
+      "url" : "https://ma-bru.github.io/blog",
+      "sameAs" : null
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://ma-bru.github.io/blog/feed.xml" type="application/atom+xml" rel="alternate" title="Minimal Mistakes Development Test Site Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://ma-bru.github.io/blog/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://ma-bru.github.io/blog/">Minimal Mistakes Development Test Site</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a></li>
+          
+        </ul>
+        <button><div class="navicon"></div></button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://ma-bru.github.io/blog/assets/images/bio-photo.jpg" class="author__avatar" alt="Your Name" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Your Name</h3>
+    
+      <p class="author__bio" itemprop="description">
+        I am an amazing person.
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">Somewhere</span>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://twitter.com/mmistakes" itemprop="sameAs">
+            <i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems">
+    <meta itemprop="description" content="Some time ago. I started a blog using Github pages and Jekyll.Since I didn’t like any of the default themes I decided to use the modern and clean Minimal Mistakes theme.Back then (and unfortunately still today when using a Github user/organization page), in order to use the theme, it was necessary to fork the repo and modify the relevant files.This method basically went well until I first tried to update the theme, got overwhelmed by merge conflicts and basically lost interest in the maintenance.">
+    <meta itemprop="datePublished" content="October 03, 2017">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>Some time ago. I started a blog using Github pages and Jekyll.
+Since I didn’t like any of the default <a href="https://pages.github.com/themes/">themes</a> I decided to use the modern and clean <a href="https://mmistakes.github.io/minimal-mistakes/">Minimal Mistakes</a> theme.
+Back then (and unfortunately still today when using a Github user/organization page), in order to use the theme, it was necessary to fork the <a href="https://github.com/mmistakes/minimal-mistakes">repo</a> and modify the relevant files.
+This method basically went well until I first tried to update the theme, got overwhelmed by merge conflicts and basically lost interest in the maintenance.</p>
+
+<p>Recently I noticed, that Minimal Mistakes is now available as a ruby gem.
+This seems to be a much saner option, since theme and content/configuration are clearly seperated eliminating the risk of a repeated merge desaster.</p>
+
+<h2 id="github-pages">Github pages</h2>
+
+<p>There’s two types of github pages, user/organization pages and project pages.
+The difference is, that for each user (or organization), there can be only one
+user page served at <code class="highlighter-rouge">https://username.github.io</code>. Furthermore, the page is automatically
+built from the master branch of the corresponding repo (<code class="highlighter-rouge">https://github.com/USER/USER.github.io</code>).</p>
+
+<p>First off all, log in to Github and create a new repo. We’ll refer to this repo
+by REPONAME later.</p>
+
+<h2 id="setting-up-the-repo">Setting up the repo</h2>
+
+<p>Start by cloning the repo on your harddrive:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Clone and enter repo</span>
+git clone git@github.com:<span class="k">${</span><span class="nv">USER</span><span class="k">}</span>/<span class="k">${</span><span class="nv">REPONAME</span><span class="k">}</span>.git
+<span class="nb">cd</span> <span class="k">${</span><span class="nv">REPONAME</span><span class="k">}</span>
+</code></pre></div></div>
+<p>Then create the gh-pages branch. Once it’s created, github will automatically
+use it to serve it’s content under <code class="highlighter-rouge">https://USER.github.io/REPO/</code>:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch gh-pages
+git checkout gh-pages
+git push <span class="nt">--set-upstream</span> origin gh-pages
+</code></pre></div></div>
+<p>The next step is not strictly necessary, but it will later simplify the release
+process:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Clone repo again within the repo and move it to</span>
+<span class="c"># _site folder (that's where Jekyll will generate)</span>
+<span class="c"># the webpage</span>
+git clone git@github.com:<span class="k">${</span><span class="nv">USER</span><span class="k">}</span>/<span class="k">${</span><span class="nv">REPONAME</span><span class="k">}</span>.git
+mv <span class="k">${</span><span class="nv">REPONAME</span><span class="k">}</span> _site
+<span class="nb">cd </span>_site
+git checkout gh-pages
+<span class="nb">cd</span> ..
+<span class="nb">echo </span>_site <span class="o">&gt;</span> .gitignore
+</code></pre></div></div>
+<p>Note, that instead of cloning the repo and checking out the gh-pages branch in
+the <code class="highlighter-rouge">_site</code> folder, you could as well clone it somewhere else and manually copy the
+generated files over. Or use the <code class="highlighter-rouge">--destination</code> flag when running jekyll:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll build <span class="nt">--destination</span> /path/to/gh-pages/branch
+</code></pre></div></div>
+<h2 id="adding-the-theme-configuration-and-release">Adding the theme, configuration and release</h2>
+<p>Now that we’re finished setting up the repo structure, we can begin adding the
+minimal mistakes theme and first content. The original <a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">description</a> is unfortunately not too verbose about how to setup your page.
+Personally, I think it’s the easiest, to just download the files from the minimal mistakes
+<a href="https://github.com/mmistakes/minimal-mistakes/tree/master/test">example folder</a>
+to the repo:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="k">${</span><span class="nv">REPOPATH</span><span class="k">}</span>
+wget https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/test/_config.yml
+wget https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/test/Gemfile
+wget https://raw.githubusercontent.com/mmistiakes/minimal-mistakes/master/test/index.html
+<span class="c"># Remove the relative path for the jekyll theme in the Gemfile:</span>
+sed <span class="nt">-i</span> <span class="s1">'s%gem "minimal-mistakes-jekyll", path: "../"%gem "minimal-mistakes-jekyll"%g'</span> Gemfile
+<span class="c"># Use bundler to install dependencies</span>
+bundler install
+</code></pre></div></div>
+
+<p>Afterwards execute:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Build and release the webpage</span>
+bundle <span class="nb">exec </span>jekyll build
+<span class="nb">cd </span>_site
+git add <span class="nt">-A</span>
+git commit
+git push
+</code></pre></div></div>
+<p>to build and publish your page. you can check your page at: “https://USER.github.io/REPO/”.
+As you can see some resources can’t be found and the page looks broken. To fix
+this, we need to adjust some lines in the _config.yml file</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>url : "https://USER.github.io"
+baseurl : "/REPO"
+</code></pre></div></div>
+<p>and build and release (as above).</p>
+
+<p>The last thing that is missing, is of course a first post. You can find examples
+<a href="https://mmistakes.github.io/minimal-mistakes/year-archive/">here</a> and the corresponding
+md files <a href="https://github.com/mmistakes/minimal-mistakes/tree/master/test/_posts">here</a>.
+To start with one of the examples create a “_posts” folder and download one example:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir _posts
+<span class="nb">cd </span>_posts
+wget https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/test/_posts/2016-02-24-welcome-to-jekyll.md
+</code></pre></div></div>
+
+<p>In order to locally test your generated page you can use:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve <span class="nt">--incremental</span> <span class="nt">-destination</span> /tmp/page
+</code></pre></div></div>
+<p>If you don’t add the “-destination” flag, jekyll will overwrite the contents
+of your “_site” folder. Which is not a problem per se, but might lead to problems
+if you accidentaly push it to github. (The site.url will be overwritten with localhost)</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://ma-bru.github.io/blog/tags/#blog" class="page__taxonomy-item" rel="tag">Blog</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://ma-bru.github.io/blog/tags/#github" class="page__taxonomy-item" rel="tag">Github</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://ma-bru.github.io/blog/tags/#jekyll" class="page__taxonomy-item" rel="tag">Jekyll</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://ma-bru.github.io/blog/tags/#minimal-mistakes" class="page__taxonomy-item" rel="tag">Minimal Mistakes</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://ma-bru.github.io/blog/categories/#blog" class="page__taxonomy-item" rel="tag">Blog</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-10-03T00:00:00+02:00">October 03, 2017</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?via=mmistakes&text=Howto%3A+Create+a+blog+with+Jekyll%2C+Github+pages%2C+Minimal+Mistakes+gems%20https%3A%2F%2Fma-bru.github.io%2Fblog%2Fblog%2Fjekyll-gh-pages-mm-gem%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fma-bru.github.io%2Fblog%2Fblog%2Fjekyll-gh-pages-mm-gem%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fma-bru.github.io%2Fblog%2Fblog%2Fjekyll-gh-pages-mm-gem%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fma-bru.github.io%2Fblog%2Fblog%2Fjekyll-gh-pages-mm-gem%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://ma-bru.github.io/blog/blog/jekyll-gh-pages-mm-gem/" rel="permalink">Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  3 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Some time ago. I started a blog using Github pages and Jekyll.
+Since I didn’t like any of the default themes I decided to use the modern and clean Minimal Mi...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://twitter.com/mmistakes"><i class="fa fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+    
+    
+    
+    <li><a href="https://ma-bru.github.io/blog/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Your Name. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://ma-bru.github.io/blog/assets/js/main.min.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
