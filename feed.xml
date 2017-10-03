@@ -1,1 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://ma-bru.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ma-bru.github.io/blog/" rel="alternate" type="text/html" /><updated>2017-10-03T18:59:08+02:00</updated><id>https://ma-bru.github.io/blog/</id><title type="html">Minimal Mistakes Development Test Site</title><subtitle>Minimal Mistakes theme test.</subtitle><author><name>Your Name</name></author></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2017-10-03T20:12:15+02:00</updated><id>http://localhost:4000/blog/</id><title type="html">Minimal Mistakes Development Test Site</title><subtitle>Minimal Mistakes theme test.</subtitle><author><name>Your Name</name></author><entry><title type="html">Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems</title><link href="http://localhost:4000/blog/jekyll/github/minimal%20mistakes/jekyll-gh-pages-mm-gem/" rel="alternate" type="text/html" title="Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems" /><published>2017-10-03T00:00:00+02:00</published><updated>2017-10-03T00:00:00+02:00</updated><id>http://localhost:4000/blog/jekyll/github/minimal%20mistakes/jekyll-gh-pages-mm-gem</id><content type="html" xml:base="http://localhost:4000/blog/jekyll/github/minimal%20mistakes/jekyll-gh-pages-mm-gem/">&lt;p&gt;Trying to build a blog. Clone repo unbelievably messy. Gem seems like a good idea
+undocumented…&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Clone and enter repo&lt;/span&gt;
+git clone git@github.com:&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;USER&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;REPONAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;.git
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;REPONAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;# Create gh-pages branch.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# Github seems to enable the gh-pages automatically&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# if repo has this branch&lt;/span&gt;
+git branch gh-pages
+git checkout gh-pages
+git push &lt;span class=&quot;nt&quot;&gt;--set-upstream&lt;/span&gt; origin gh-pages
+
+&lt;span class=&quot;c&quot;&gt;# Clone repo again within the repo and move it to&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# _site folder (that's where Jekyll will generate)&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# the webpage&lt;/span&gt;
+git clone git@github.com:&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;USER&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;REPONAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;.git
+mv &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;REPONAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt; _site
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;_site
+git checkout gh-pages
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..
+&lt;span class=&quot;nb&quot;&gt;echo &lt;/span&gt;_site &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; .gitignore
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now that we’re finished setting up the repo structure, we can begin adding the
+minimal mistakes theme and first content. The original &lt;a href=&quot;http://www.google.com&quot;&gt;asfd&lt;/a&gt;&lt;/p&gt;</content><author><name>Your Name</name></author><category term="blog" /><summary type="html">Trying to build a blog. Clone repo unbelievably messy. Gem seems like a good idea undocumented…</summary></entry></feed>
