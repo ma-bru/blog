@@ -10,6 +10,7 @@ tags:
  - Howto
  - Ruby
  - Bundler
+comments: true
 ---
 {% include toc %}
 Some time ago. I started a blog using Github pages and Jekyll.
