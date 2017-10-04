@@ -50,7 +50,7 @@ gem install bundler
 
 ## Setting up the repo
 First off all, log in to Github and create a new repo. We'll refer to this repo
-by REPONAME later. Start by cloning the repo on your harddrive: 
+by `REPONAME` later. Start by cloning the repo on your harddrive: 
 
 ```bash
 # Clone and enter repo
@@ -111,13 +111,40 @@ git add -A
 git commit
 git push
 ```
-to build and publish your page. you can check your page at: "https://USER.github.io/REPO/".
-As you can see some resources can't be found and the page looks broken. To fix
-this, we need to adjust some lines in the _config.yml file
+to build and publish your page. you can check your page at: `https://<USER>.github.io/<REPONAME>/`.
+As you can see some resources can't be found and the page looks broken.
+Furthermore clicking on a tag below a post will lead to a 404 error.
+To fix this, we need to adjust some lines in the _config.yml file  and allow `jekyll-archives`
+to generate tags and categories pages (see [here](mmistakes.github.io/minimal-mistakes/docs/configuration/#archive-settings)).
 ```
 url : "https://<USER>.github.io"
 baseurl : "/<REPO>"
+
+category_archive:
+  type: jekyll-archives
+  path: /categories/
+tag_archive:
+  type: jekyll-archives
+  path: /tags/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
 ```
+```bash
+cd ${REPOPATH}
+mkdir _pages
+cd _pages
+wget raw.githubusercontent.com/mmistakes/minimal-mistakes/master/docs/_pages/tag-archive.html
+wget raw.githubusercontent.com/mmistakes/minimal-mistakes/master/docs/_pages/category-archive.html
+```
+
 and build and release (as above).
 
 The last thing that is missing, is of course a first post. You can find examples
