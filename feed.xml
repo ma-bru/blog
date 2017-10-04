@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://ma-bru.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ma-bru.github.io/blog/" rel="alternate" type="text/html" /><updated>2017-10-04T09:36:16+02:00</updated><id>https://ma-bru.github.io/blog/</id><title type="html">Blog</title><subtitle>My personal blog</subtitle><author><name>Manuel Brucker</name><uri>http://rmc.dlr.de/rm/de/staff/manuel.brucker/</uri></author><entry><title type="html">Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems</title><link href="https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem/" rel="alternate" type="text/html" title="Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems" /><published>2017-10-03T00:00:00+02:00</published><updated>2017-10-03T00:00:00+02:00</updated><id>https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem</id><content type="html" xml:base="https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem/">&lt;p&gt;Some time ago. I started a blog using Github pages and Jekyll.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://ma-bru.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ma-bru.github.io/blog/" rel="alternate" type="text/html" /><updated>2017-10-04T10:22:17+02:00</updated><id>https://ma-bru.github.io/blog/</id><title type="html">Blog</title><subtitle>My personal blog</subtitle><author><name>Manuel Brucker</name><uri>http://rmc.dlr.de/rm/de/staff/manuel.brucker/</uri></author><entry><title type="html">Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems</title><link href="https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem/" rel="alternate" type="text/html" title="Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems" /><published>2017-10-03T00:00:00+02:00</published><updated>2017-10-03T00:00:00+02:00</updated><id>https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem</id><content type="html" xml:base="https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem/">&lt;p&gt;Some time ago. I started a blog using Github pages and Jekyll.
 Since I didn’t like any of the default &lt;a href=&quot;https://pages.github.com/themes/&quot;&gt;themes&lt;/a&gt; I decided to use the modern and clean &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/&quot;&gt;Minimal Mistakes&lt;/a&gt; theme.
 Back then (and unfortunately still today when using a Github user/organization page), in order to use the theme, it was necessary to fork the &lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes&quot;&gt;repo&lt;/a&gt; and modify the relevant files.
 I stronlgy disliked doing this.
@@ -36,7 +36,7 @@ gem install bundler
 
 &lt;h2 id=&quot;setting-up-the-repo&quot;&gt;Setting up the repo&lt;/h2&gt;
 &lt;p&gt;First off all, log in to Github and create a new repo. We’ll refer to this repo
-by REPONAME later. Start by cloning the repo on your harddrive:&lt;/p&gt;
+by &lt;code class=&quot;highlighter-rouge&quot;&gt;REPONAME&lt;/code&gt; later. Start by cloning the repo on your harddrive:&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Clone and enter repo&lt;/span&gt;
 git clone git@github.com:&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;USER&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;REPONAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;.git
@@ -91,12 +91,38 @@ git add &lt;span class=&quot;nt&quot;&gt;-A&lt;/span&gt;
 git commit
 git push
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;to build and publish your page. you can check your page at: “https://USER.github.io/REPO/”.
-As you can see some resources can’t be found and the page looks broken. To fix
-this, we need to adjust some lines in the _config.yml file&lt;/p&gt;
+&lt;p&gt;to build and publish your page. you can check your page at: &lt;code class=&quot;highlighter-rouge&quot;&gt;https://&amp;lt;USER&amp;gt;.github.io/&amp;lt;REPONAME&amp;gt;/&lt;/code&gt;.
+As you can see some resources can’t be found and the page looks broken.
+Furthermore clicking on a tag below a post will lead to a 404 error.
+To fix this, we need to adjust some lines in the _config.yml file  and allow &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-archives&lt;/code&gt;
+to generate tags and categories pages (see &lt;a href=&quot;mmistakes.github.io/minimal-mistakes/docs/configuration/#archive-settings&quot;&gt;here&lt;/a&gt;).&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;url : &quot;https://&amp;lt;USER&amp;gt;.github.io&quot;
 baseurl : &quot;/&amp;lt;REPO&amp;gt;&quot;
+
+category_archive:
+  type: jekyll-archives
+  path: /categories/
+tag_archive:
+  type: jekyll-archives
+  path: /tags/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;REPOPATH&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+mkdir _pages
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;_pages
+wget raw.githubusercontent.com/mmistakes/minimal-mistakes/master/docs/_pages/tag-archive.html
+wget raw.githubusercontent.com/mmistakes/minimal-mistakes/master/docs/_pages/category-archive.html
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;p&gt;and build and release (as above).&lt;/p&gt;
 
 &lt;p&gt;The last thing that is missing, is of course a first post. You can find examples

@@ -133,7 +133,10 @@
         <ul class="visible-links">
           
             
-            <li class="masthead__menu-item"><a href="https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/">Quick-Start Guide</a></li>
+            <li class="masthead__menu-item"><a href="https://ma-bru.github.io/blog/tags/">Tags</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ma-bru.github.io/blog/categories/">Categories</a></li>
           
         </ul>
         <button><div class="navicon"></div></button>
@@ -292,7 +295,7 @@
 
 
 
-  3 minute read
+  4 minute read
 </p>
           
         </header>
@@ -337,7 +340,7 @@ gem install bundler
 
 <h2 id="setting-up-the-repo">Setting up the repo</h2>
 <p>First off all, log in to Github and create a new repo. We’ll refer to this repo
-by REPONAME later. Start by cloning the repo on your harddrive:</p>
+by <code class="highlighter-rouge">REPONAME</code> later. Start by cloning the repo on your harddrive:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Clone and enter repo</span>
 git clone git@github.com:<span class="k">${</span><span class="nv">USER</span><span class="k">}</span>/<span class="k">${</span><span class="nv">REPONAME</span><span class="k">}</span>.git
@@ -392,12 +395,38 @@ git add <span class="nt">-A</span>
 git commit
 git push
 </code></pre></div></div>
-<p>to build and publish your page. you can check your page at: “https://USER.github.io/REPO/”.
-As you can see some resources can’t be found and the page looks broken. To fix
-this, we need to adjust some lines in the _config.yml file</p>
+<p>to build and publish your page. you can check your page at: <code class="highlighter-rouge">https://&lt;USER&gt;.github.io/&lt;REPONAME&gt;/</code>.
+As you can see some resources can’t be found and the page looks broken.
+Furthermore clicking on a tag below a post will lead to a 404 error.
+To fix this, we need to adjust some lines in the _config.yml file  and allow <code class="highlighter-rouge">jekyll-archives</code>
+to generate tags and categories pages (see <a href="mmistakes.github.io/minimal-mistakes/docs/configuration/#archive-settings">here</a>).</p>
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>url : "https://&lt;USER&gt;.github.io"
 baseurl : "/&lt;REPO&gt;"
+
+category_archive:
+  type: jekyll-archives
+  path: /categories/
+tag_archive:
+  type: jekyll-archives
+  path: /tags/
+jekyll-archives:
+  enabled:
+    - categories
+    - tags
+  layouts:
+    category: archive-taxonomy
+    tag: archive-taxonomy
+  permalinks:
+    category: /categories/:name/
+    tag: /tags/:name/
 </code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> <span class="k">${</span><span class="nv">REPOPATH</span><span class="k">}</span>
+mkdir _pages
+<span class="nb">cd </span>_pages
+wget raw.githubusercontent.com/mmistakes/minimal-mistakes/master/docs/_pages/tag-archive.html
+wget raw.githubusercontent.com/mmistakes/minimal-mistakes/master/docs/_pages/category-archive.html
+</code></pre></div></div>
+
 <p>and build and release (as above).</p>
 
 <p>The last thing that is missing, is of course a first post. You can find examples
@@ -436,31 +465,31 @@ if you accidentaly push it to github. (The site.url will be overwritten with loc
     
       
       
-      <a href="https://ma-bru.github.io/blog/tags/#blog" class="page__taxonomy-item" rel="tag">Blog</a><span class="sep">, </span>
+      <a href="https://ma-bru.github.io/blog/tags/blog" class="page__taxonomy-item" rel="tag">Blog</a><span class="sep">, </span>
     
       
       
-      <a href="https://ma-bru.github.io/blog/tags/#bundler" class="page__taxonomy-item" rel="tag">Bundler</a><span class="sep">, </span>
+      <a href="https://ma-bru.github.io/blog/tags/bundler" class="page__taxonomy-item" rel="tag">Bundler</a><span class="sep">, </span>
     
       
       
-      <a href="https://ma-bru.github.io/blog/tags/#github" class="page__taxonomy-item" rel="tag">Github</a><span class="sep">, </span>
+      <a href="https://ma-bru.github.io/blog/tags/github" class="page__taxonomy-item" rel="tag">Github</a><span class="sep">, </span>
     
       
       
-      <a href="https://ma-bru.github.io/blog/tags/#howto" class="page__taxonomy-item" rel="tag">Howto</a><span class="sep">, </span>
+      <a href="https://ma-bru.github.io/blog/tags/howto" class="page__taxonomy-item" rel="tag">Howto</a><span class="sep">, </span>
     
       
       
-      <a href="https://ma-bru.github.io/blog/tags/#jekyll" class="page__taxonomy-item" rel="tag">Jekyll</a><span class="sep">, </span>
+      <a href="https://ma-bru.github.io/blog/tags/jekyll" class="page__taxonomy-item" rel="tag">Jekyll</a><span class="sep">, </span>
     
       
       
-      <a href="https://ma-bru.github.io/blog/tags/#minimal-mistakes" class="page__taxonomy-item" rel="tag">Minimal Mistakes</a><span class="sep">, </span>
+      <a href="https://ma-bru.github.io/blog/tags/minimal-mistakes" class="page__taxonomy-item" rel="tag">Minimal Mistakes</a><span class="sep">, </span>
     
       
       
-      <a href="https://ma-bru.github.io/blog/tags/#ruby" class="page__taxonomy-item" rel="tag">Ruby</a>
+      <a href="https://ma-bru.github.io/blog/tags/ruby" class="page__taxonomy-item" rel="tag">Ruby</a>
     
     </span>
   </p>
@@ -481,7 +510,7 @@ if you accidentaly push it to github. (The site.url will be overwritten with loc
     
       
       
-      <a href="https://ma-bru.github.io/blog/categories/#howto" class="page__taxonomy-item" rel="tag">Howto</a>
+      <a href="https://ma-bru.github.io/blog/categories/howto" class="page__taxonomy-item" rel="tag">Howto</a>
     
     </span>
   </p>
@@ -538,7 +567,7 @@ if you accidentaly push it to github. (The site.url will be overwritten with loc
 
 
 
-  3 minute read
+  4 minute read
 </p>
     
     <p class="archive__item-excerpt" itemprop="description">Some time ago. I started a blog using Github pages and Jekyll.
