@@ -1,17 +1,39 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://ma-bru.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ma-bru.github.io/blog/" rel="alternate" type="text/html" /><updated>2017-10-04T10:22:17+02:00</updated><id>https://ma-bru.github.io/blog/</id><title type="html">Blog</title><subtitle>My personal blog</subtitle><author><name>Manuel Brucker</name><uri>http://rmc.dlr.de/rm/de/staff/manuel.brucker/</uri></author><entry><title type="html">Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems</title><link href="https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem/" rel="alternate" type="text/html" title="Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems" /><published>2017-10-03T00:00:00+02:00</published><updated>2017-10-03T00:00:00+02:00</updated><id>https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem</id><content type="html" xml:base="https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem/">&lt;p&gt;Some time ago. I started a blog using Github pages and Jekyll.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://ma-bru.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ma-bru.github.io/blog/" rel="alternate" type="text/html" /><updated>2017-10-04T11:17:40+02:00</updated><id>https://ma-bru.github.io/blog/</id><title type="html">Blog</title><subtitle>My personal blog</subtitle><author><name>Manuel Brucker</name><uri>http://rmc.dlr.de/rm/de/staff/manuel.brucker/</uri></author><entry><title type="html">Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems</title><link href="https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem/" rel="alternate" type="text/html" title="Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems" /><published>2017-10-03T00:00:00+02:00</published><updated>2017-10-03T00:00:00+02:00</updated><id>https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem</id><content type="html" xml:base="https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem/">&lt;aside class=&quot;sidebar__right&quot;&gt;
+&lt;nav class=&quot;toc&quot;&gt;
+    &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fa fa-file-text&quot;&gt;&lt;/i&gt; On This Page&lt;/h4&gt;&lt;/header&gt;
+&lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
+  &lt;li&gt;&lt;a href=&quot;#github-pages&quot; id=&quot;markdown-toc-github-pages&quot;&gt;Github pages&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#setting-up-ruby-and-bundler&quot; id=&quot;markdown-toc-setting-up-ruby-and-bundler&quot;&gt;Setting up Ruby and Bundler&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#setting-up-the-repo&quot; id=&quot;markdown-toc-setting-up-the-repo&quot;&gt;Setting up the repo&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#adding-the-theme-configuration-and-release&quot; id=&quot;markdown-toc-adding-the-theme-configuration-and-release&quot;&gt;Adding the theme, configuration and release&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#build-and-publish-page&quot; id=&quot;markdown-toc-build-and-publish-page&quot;&gt;Build and publish page&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#initial-config&quot; id=&quot;markdown-toc-initial-config&quot;&gt;Initial config&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#other-tips&quot; id=&quot;markdown-toc-other-tips&quot;&gt;Other tips&lt;/a&gt;    &lt;ul&gt;
+      &lt;li&gt;&lt;a href=&quot;#first-post&quot; id=&quot;markdown-toc-first-post&quot;&gt;First post&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#test-your-page-locally&quot; id=&quot;markdown-toc-test-your-page-locally&quot;&gt;Test your page locally&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a href=&quot;#font-size&quot; id=&quot;markdown-toc-font-size&quot;&gt;Font size&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+  &lt;/nav&gt;
+&lt;/aside&gt;
+&lt;p&gt;Some time ago. I started a blog using Github pages and Jekyll.
 Since I didn’t like any of the default &lt;a href=&quot;https://pages.github.com/themes/&quot;&gt;themes&lt;/a&gt; I decided to use the modern and clean &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/&quot;&gt;Minimal Mistakes&lt;/a&gt; theme.
 Back then (and unfortunately still today when using a Github user/organization page), in order to use the theme, it was necessary to fork the &lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes&quot;&gt;repo&lt;/a&gt; and modify the relevant files.
-I stronlgy disliked doing this.
-Forking and modifying repos should imho only be done if you want to modify the theme and plan to give back some of your modifications.
-For just using it it’s inconvenientJust using it is not a good enough reason.
+I stronglgy disliked doing this.
+Forking and modifying repos should in my opinion only be done if you want to modify the theme and plan to give back some of your modifications.
+For just using it, it’s too much trouble to update the theme when it’s all mixed with your personal modifications.
 As expected, this method only worked until I first tried to update the theme, got overwhelmed by merge conflicts and basically lost interest in the maintenance.&lt;/p&gt;
 
 &lt;p&gt;Recently I noticed, that Minimal Mistakes is now available as a ruby gem.
-This seems to be a much saner option, since theme and content/configuration are clearly seperated eliminating the risk of a repeated merge desaster.&lt;/p&gt;
+This seems to be a much saner option, since theme and content/configuration are clearly separated eliminating the risk of a repeated merge disaster.&lt;/p&gt;
 
 &lt;h2 id=&quot;github-pages&quot;&gt;Github pages&lt;/h2&gt;
 
-&lt;p&gt;There’s two types of github pages, user/organization pages and project pages.
+&lt;p&gt;There’s two types of Github pages, user/organization pages and project pages.
 The difference is, that for each user (or organization), there can be only one
 user page served at &lt;code class=&quot;highlighter-rouge&quot;&gt;https://&amp;lt;USER&amp;gt;.github.io&lt;/code&gt;. Furthermore, the page is automatically
 built from the master branch of the corresponding repo (&lt;code class=&quot;highlighter-rouge&quot;&gt;https://github.com/&amp;lt;USER&amp;gt;/&amp;lt;USER&amp;gt;.github.io&lt;/code&gt;).
@@ -21,7 +43,7 @@ As mentioned earlier, in order to keep upgrading the theme easy, this is not an 
 
 &lt;p&gt;The other option is a project page. There you can choose to publish your page from the &lt;code class=&quot;highlighter-rouge&quot;&gt;master&lt;/code&gt;
 or &lt;code class=&quot;highlighter-rouge&quot;&gt;gh-pages&lt;/code&gt; branch or from a &lt;code class=&quot;highlighter-rouge&quot;&gt;docs&lt;/code&gt; subfolder in your master branch. I’ll use the gh-pages
-method, since that way commit messages for updated content are seperated from commits that update
+method, since that way commit messages for updated content are separated from commits that update
 generated files.&lt;/p&gt;
 
 &lt;h2 id=&quot;setting-up-ruby-and-bundler&quot;&gt;Setting up Ruby and Bundler&lt;/h2&gt;
@@ -36,14 +58,14 @@ gem install bundler
 
 &lt;h2 id=&quot;setting-up-the-repo&quot;&gt;Setting up the repo&lt;/h2&gt;
 &lt;p&gt;First off all, log in to Github and create a new repo. We’ll refer to this repo
-by &lt;code class=&quot;highlighter-rouge&quot;&gt;REPONAME&lt;/code&gt; later. Start by cloning the repo on your harddrive:&lt;/p&gt;
+by &lt;code class=&quot;highlighter-rouge&quot;&gt;REPONAME&lt;/code&gt; later. Start by cloning the repo on your local filesystem:&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Clone and enter repo&lt;/span&gt;
 git clone git@github.com:&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;USER&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/&lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;REPONAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;.git
 &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;REPONAME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
 &lt;span class=&quot;nv&quot;&gt;REPOPATH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;pwd&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;Then create the gh-pages branch. Once it’s created, github will automatically
+&lt;p&gt;Then create the gh-pages branch. Once it’s created, Github will automatically
 use it to serve it’s content under &lt;code class=&quot;highlighter-rouge&quot;&gt;https://USER.github.io/REPO/&lt;/code&gt;:&lt;/p&gt;
 
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git branch gh-pages
@@ -62,7 +84,7 @@ git checkout gh-pages
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Note, that instead of cloning the repo and checking out the gh-pages branch in
 the &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt; folder, you could as well clone it somewhere else and manually copy the
-generated files over. Or use the &lt;code class=&quot;highlighter-rouge&quot;&gt;--destination&lt;/code&gt; flag when running jekyll:&lt;/p&gt;
+generated files over. Or use the &lt;code class=&quot;highlighter-rouge&quot;&gt;--destination&lt;/code&gt; flag when running Jekyll:&lt;/p&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;REPOPATH&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
 bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll build &lt;span class=&quot;nt&quot;&gt;--destination&lt;/span&gt; /path/to/gh-pages/branch
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -82,8 +104,8 @@ sed &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; &lt;span class=&quot;s1&quo
 &lt;span class=&quot;c&quot;&gt;# Use bundler to install dependencies&lt;/span&gt;
 bundler install
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;Afterwards execute:&lt;/p&gt;
+&lt;h3 id=&quot;build-and-publish-page&quot;&gt;Build and publish page&lt;/h3&gt;
+&lt;p&gt;Execute:&lt;/p&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# Build and release the webpage&lt;/span&gt;
 bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll build
 &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;_site
@@ -91,10 +113,11 @@ git add &lt;span class=&quot;nt&quot;&gt;-A&lt;/span&gt;
 git commit
 git push
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;to build and publish your page. you can check your page at: &lt;code class=&quot;highlighter-rouge&quot;&gt;https://&amp;lt;USER&amp;gt;.github.io/&amp;lt;REPONAME&amp;gt;/&lt;/code&gt;.
+&lt;p&gt;to build and publish your page. You can check your page at: &lt;code class=&quot;highlighter-rouge&quot;&gt;https://&amp;lt;USER&amp;gt;.github.io/&amp;lt;REPONAME&amp;gt;/&lt;/code&gt;.
 As you can see some resources can’t be found and the page looks broken.
-Furthermore clicking on a tag below a post will lead to a 404 error.
-To fix this, we need to adjust some lines in the _config.yml file  and allow &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-archives&lt;/code&gt;
+Furthermore clicking on a tag below a post would lead to a 404 error.&lt;/p&gt;
+&lt;h3 id=&quot;initial-config&quot;&gt;Initial config&lt;/h3&gt;
+&lt;p&gt;To fix this, we need to adjust some lines in the _config.yml file  and allow &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll-archives&lt;/code&gt;
 to generate tags and categories pages (see &lt;a href=&quot;mmistakes.github.io/minimal-mistakes/docs/configuration/#archive-settings&quot;&gt;here&lt;/a&gt;).&lt;/p&gt;
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;url : &quot;https://&amp;lt;USER&amp;gt;.github.io&quot;
 baseurl : &quot;/&amp;lt;REPO&amp;gt;&quot;
@@ -122,10 +145,12 @@ mkdir _pages
 wget raw.githubusercontent.com/mmistakes/minimal-mistakes/master/docs/_pages/tag-archive.html
 wget raw.githubusercontent.com/mmistakes/minimal-mistakes/master/docs/_pages/category-archive.html
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;and build and release (as above). This should provide you with a first usable page to play around with.&lt;/p&gt;
 
-&lt;p&gt;and build and release (as above).&lt;/p&gt;
+&lt;h2 id=&quot;other-tips&quot;&gt;Other tips&lt;/h2&gt;
 
-&lt;p&gt;The last thing that is missing, is of course a first post. You can find examples
+&lt;h3 id=&quot;first-post&quot;&gt;First post&lt;/h3&gt;
+&lt;p&gt;You can find example posts 
 &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/year-archive/&quot;&gt;here&lt;/a&gt; and the corresponding
 md files &lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes/tree/master/test/_posts&quot;&gt;here&lt;/a&gt;.
 To start with one of the examples create a “_posts” folder and download one example:&lt;/p&gt;
@@ -134,10 +159,36 @@ To start with one of the examples create a “_posts” folder and download one 
 &lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;_posts
 wget https://raw.githubusercontent.com/mmistakes/minimal-mistakes/master/test/_posts/2016-02-24-welcome-to-jekyll.md
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
+&lt;h3 id=&quot;test-your-page-locally&quot;&gt;Test your page locally&lt;/h3&gt;
 &lt;p&gt;In order to locally test your generated page you can use:&lt;/p&gt;
 &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve &lt;span class=&quot;nt&quot;&gt;--incremental&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-destination&lt;/span&gt; /tmp/page
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;If you don’t add the “-destination” flag, jekyll will overwrite the contents
+&lt;p&gt;If you don’t add the “-destination” flag, Jekyll will overwrite the contents
 of your “_site” folder. Which is not a problem per se, but might lead to problems
-if you accidentaly push it to github. (The site.url will be overwritten with localhost)&lt;/p&gt;</content><author><name>Manuel Brucker</name><uri>http://rmc.dlr.de/rm/de/staff/manuel.brucker/</uri></author><category term="Jekyll" /><category term="Github" /><category term="Minimal Mistakes" /><category term="Blog" /><category term="Howto" /><category term="Ruby" /><category term="Bundler" /><summary type="html">Some time ago. I started a blog using Github pages and Jekyll. Since I didn’t like any of the default themes I decided to use the modern and clean Minimal Mistakes theme. Back then (and unfortunately still today when using a Github user/organization page), in order to use the theme, it was necessary to fork the repo and modify the relevant files. I stronlgy disliked doing this. Forking and modifying repos should imho only be done if you want to modify the theme and plan to give back some of your modifications. For just using it it’s inconvenientJust using it is not a good enough reason. As expected, this method only worked until I first tried to update the theme, got overwhelmed by merge conflicts and basically lost interest in the maintenance.</summary></entry></feed>
+if you accidentaly push it to github. (The site.url will be overwritten with localhost)&lt;/p&gt;
+
+&lt;h3 id=&quot;font-size&quot;&gt;Font size&lt;/h3&gt;
+&lt;p&gt;If you think the font size is too big, you can change it by creating a new folder and copying
+a .scss file (see &lt;a href=&quot;github.com/mmistakes/minimal-mistakes/issues/1219&quot;&gt;here&lt;/a&gt;).&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;REPOPATH&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;
+mkdir &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; assets/css
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;assets/css
+cp &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;GEMHOME&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;}&lt;/span&gt;/gems/minimal-mistakes-&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt;/assets/css/main.scss &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;Then add the following at the end:&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;html {
+  font-size: 14px; // change to whatever
+
+  @include breakpoint($medium) {
+    font-size: 16px; // change to whatever
+  }
+
+  @include breakpoint($large) {
+    font-size: 18px; // change to whatever
+  }
+
+  @include breakpoint($x-large) {
+    font-size: 20px; // change to whatever
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Manuel Brucker</name><uri>http://rmc.dlr.de/rm/de/staff/manuel.brucker/</uri></author><category term="Jekyll" /><category term="Github" /><category term="Minimal Mistakes" /><category term="Blog" /><category term="Howto" /><category term="Ruby" /><category term="Bundler" /><summary type="html">On This Page Some time ago. I started a blog using Github pages and Jekyll. Since I didn’t like any of the default themes I decided to use the modern and clean Minimal Mistakes theme. Back then (and unfortunately still today when using a Github user/organization page), in order to use the theme, it was necessary to fork the repo and modify the relevant files. I stronglgy disliked doing this. Forking and modifying repos should in my opinion only be done if you want to modify the theme and plan to give back some of your modifications. For just using it, it’s too much trouble to update the theme when it’s all mixed with your personal modifications. As expected, this method only worked until I first tried to update the theme, got overwhelmed by merge conflicts and basically lost interest in the maintenance.</summary></entry></feed>
