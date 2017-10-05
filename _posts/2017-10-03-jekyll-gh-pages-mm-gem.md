@@ -10,12 +10,11 @@ tags:
  - Howto
  - Ruby
  - Bundler
-comments: true
 ---
-{% include toc %}
 Some time ago. I started a blog using Github pages and Jekyll.
 Since I didn't like any of the default [themes](https://pages.github.com/themes/) I decided to use the modern and clean [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) theme.
 Back then (and unfortunately still today when using a Github user/organization page), in order to use the theme, it was necessary to fork the [repo](https://github.com/mmistakes/minimal-mistakes) and modify the relevant files.
+{% include toc %}
 I stronglgy disliked doing this.
 Forking and modifying repos should in my opinion only be done if you want to modify the theme and plan to give back some of your modifications.
 For just using it, it's too much trouble to update the theme when it's all mixed with your personal modifications.
