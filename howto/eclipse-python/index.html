@@ -1,0 +1,561 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.6.0 by Michael Rose
+  Copyright 2017 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin SEO -->
+
+
+
+
+
+
+
+
+
+<title>(Somewhat) usable Eclipse installation for Python development - Blog</title>
+
+
+
+
+<meta name="description" content="I mainly do C++ and Python development.For C++ I’m really happy with QtCreator.Personally I barely use the Qt framework and despite the name it does an awesome job for any kind of C++ development.It’s lightweight, has the best CMake integration I’ve ever seen (It’s 2017, can we please get rid of IDE specific build systems?).Plus some nice features like an integrated Clang based syntax checker.">
+
+
+
+
+<meta name="author" content="Manuel Brucker">
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Blog">
+<meta property="og:title" content="(Somewhat) usable Eclipse installation for Python development">
+
+
+  <link rel="canonical" href="https://ma-bru.github.io/blog/howto/eclipse-python/">
+  <meta property="og:url" content="https://ma-bru.github.io/blog/howto/eclipse-python/">
+
+
+
+  <meta property="og:description" content="I mainly do C++ and Python development.For C++ I’m really happy with QtCreator.Personally I barely use the Qt framework and despite the name it does an awesome job for any kind of C++ development.It’s lightweight, has the best CMake integration I’ve ever seen (It’s 2017, can we please get rid of IDE specific build systems?).Plus some nice features like an integrated Clang based syntax checker.">
+
+
+
+
+
+  
+
+  
+
+
+
+
+
+  <meta property="og:type" content="article">
+  <meta property="article:published_time" content="2017-10-20T00:00:00+02:00">
+
+
+
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "Person",
+      "name" : "Manuel Brucker",
+      "url" : "https://ma-bru.github.io/blog",
+      "sameAs" : null
+    }
+  </script>
+
+
+
+
+
+
+<!-- end SEO -->
+
+
+<link href="https://ma-bru.github.io/blog/feed.xml" type="application/atom+xml" rel="alternate" title="Blog Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://ma-bru.github.io/blog/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use http://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="https://ma-bru.github.io/blog/">Blog</a>
+        <ul class="visible-links">
+          
+            
+            <li class="masthead__menu-item"><a href="https://ma-bru.github.io/blog/tags/">Tags</a></li>
+          
+            
+            <li class="masthead__menu-item"><a href="https://ma-bru.github.io/blog/categories/">Categories</a></li>
+          
+        </ul>
+        <button><div class="navicon"></div></button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+    
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+<div itemscope itemtype="http://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="https://ma-bru.github.io/blog/assets/images/mb.jpg" class="author__avatar" alt="Manuel Brucker" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    <h3 class="author__name" itemprop="name">Manuel Brucker</h3>
+    
+      <p class="author__bio" itemprop="description">
+        Researcher and Programmer. Interested in Computer Vision and Machine Learning
+      </p>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="http://schema.org/Place">
+          <i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> <span itemprop="name">Munich, Germany</span>
+        </li>
+      
+
+      
+        <li>
+          <a href="http://rmc.dlr.de/rm/de/staff/manuel.brucker/" itemprop="url">
+            <i class="fa fa-fw fa-chain" aria-hidden="true"></i> Website
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.facebook.com/brucker.ma" itemprop="sameAs">
+            <i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook
+          </a>
+        </li>
+      
+
+      
+
+      
+        <li>
+          <a href="https://www.linkedin.com/in/manuelbrucker" itemprop="sameAs">
+            <i class="fa fa-fw fa-linkedin-square" aria-hidden="true"></i> LinkedIn
+          </a>
+        </li>
+      
+
+      
+        <li>
+          <a href="https://www.xing.com/profile/Manuel_Brucker2" itemprop="sameAs">
+            <i class="fa fa-fw fa-xing-square" aria-hidden="true"></i> XING
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+        <li>
+          <a href="https://github.com/ma-bru" itemprop="sameAs">
+            <i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub
+          </a>
+        </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs">
+      <i class="fa fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="(Somewhat) usable Eclipse installation for Python development">
+    <meta itemprop="description" content="I mainly do C++ and Python development.For C++ I’m really happy with QtCreator.Personally I barely use the Qt framework and despite the name it does an awesome job for any kind of C++ development.It’s lightweight, has the best CMake integration I’ve ever seen (It’s 2017, can we please get rid of IDE specific build systems?).Plus some nice features like an integrated Clang based syntax checker.">
+    <meta itemprop="datePublished" content="October 20, 2017">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 class="page__title" itemprop="headline">(Somewhat) usable Eclipse installation for Python development
+</h1>
+          
+            <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  2 minute read
+</p>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        <p>I mainly do C++ and Python development.
+For C++ I’m really happy with QtCreator.
+Personally I barely use the Qt framework and despite the name it does an awesome job for any kind of C++ development.
+It’s lightweight, has the best CMake integration I’ve ever seen (It’s 2017, can we please get rid of IDE specific build systems?).
+Plus some nice features like an integrated Clang based syntax checker.</p>
+
+<p>For Python, I’m not that lucky.
+When googling around you basically find two options for full featured IDEs: PyDev and PyCharm.
+Both of them are painfully slow, Java based, memory hogs.
+Many years ago I had to use Eclipse for a while and decided I have enough of it - there used to be a whole website dedicated to people posting about how much it sucks.
+So I settled with PyCharm.</p>
+
+<p>Apart from the sluggish responses, Pycharm is ok.
+However some of the advanced features need a commercial licence.
+So in a moment of weakness, I decided to give Eclipse another chance.
+Surprisingly, turns out it’s not all that bad anymore.
+However the default installation options are.</p>
+
+<p>The standard way to install Eclipse is to go to their <a href="http://eclipse.org">website</a>.
+Follow the download button that brings you to another download button, which downloads a
+weird Windows like installer - Since when is extracting an archive not good enough anymore?
+When you run the installer it gives you a few choices of what flavour of Eclipse you
+want to install.
+All of them are bloated and none of them fitting for Python develoment.</p>
+
+<p>I decided to give the “Eclipse IDE for Java Developers” a try (it’s the only one that has the word essential in it’s descriptions).
+After installation, which asked me if I trust some certificates (You’re the official installer. You should know!), it finishes installation.
+As expected, after starting it, it feels slow and bloated.
+A look at the installed plugins shows the following:</p>
+
+<p><img src="https://ma-bru.github.io/blog/assets/images/eclipse/eclipse_java.png" alt="Default Eclipse" /></p>
+
+<p>That’s a lot of stuff I don’t want and didn’t ask for (At least the installer didn’t give me any choice).
+I tried to remove everything I don’t need - I’m looking at you <a href="http://paranoid-engineering.blogspot.de/2008/07/what-is-eclipse-mylyn-anyway.html">MyLyn</a> - which felt like cleaning a Windows system from preinstalled bloatware, but somehow ended up removing too much and eclipse wouldn’t start anymore.
+Since I believe in <a href="wiki.archlinux.org/index.php/arch_terminology#KISS">KISS</a> (funny to mention KISS in a post about eclipse…) I decided it’s the wrong way to start with something already broken and then try to fix it.</p>
+
+<p>So here’s the sane way to install Eclipse for Python development:</p>
+
+<ol>
+  <li>Go to http://archive.eclipse.org/eclipse/downloads/</li>
+  <li>Download the Platform Runtime Binary for the version you want</li>
+  <li>Unzip</li>
+  <li>Start and install PyDev as described in http://www.pydev.org/manual_101_install.html</li>
+  <li>Make sure to not install the PyDev MyLyn plugins unless you really want them.</li>
+  <li>Enjoy your clean and fast (well, as clean and fast as possible…) experience:</li>
+</ol>
+
+<p><img src="https://ma-bru.github.io/blog/assets/images/eclipse/pydev.png" alt="Minimal Eclipse" /></p>
+
+<p>The only problem I had, was that after importing a Python project from filesystem Eclipse didn’t automatically start the PyDev perspective and I couldn’t find the run and debug buttons.
+But manually switching the perspective worked just fine.</p>
+
+<p>Now go ahead and install the plugins you really want and need.</p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-tags" aria-hidden="true"></i> Tags: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://ma-bru.github.io/blog/tags/development" class="page__taxonomy-item" rel="tag">Development</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://ma-bru.github.io/blog/tags/eclipse" class="page__taxonomy-item" rel="tag">Eclipse</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://ma-bru.github.io/blog/tags/ide" class="page__taxonomy-item" rel="tag">IDE</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://ma-bru.github.io/blog/tags/pydev" class="page__taxonomy-item" rel="tag">PyDev</a><span class="sep">, </span>
+    
+      
+      
+      <a href="https://ma-bru.github.io/blog/tags/python" class="page__taxonomy-item" rel="tag">Python</a>
+    
+    </span>
+  </p>
+
+
+
+
+  
+
+
+  
+  
+  
+
+  <p class="page__taxonomy">
+    <strong><i class="fa fa-fw fa-folder-open" aria-hidden="true"></i> Categories: </strong>
+    <span itemprop="keywords">
+    
+      
+      
+      <a href="https://ma-bru.github.io/blog/categories/howto" class="page__taxonomy-item" rel="tag">Howto</a>
+    
+    </span>
+  </p>
+
+
+        
+          <p class="page__date"><strong><i class="fa fa-fw fa-calendar" aria-hidden="true"></i> Updated:</strong> <time datetime="2017-10-20T00:00:00+02:00">October 20, 2017</time></p>
+        
+      </footer>
+
+      <section class="page__share">
+  
+    <h4 class="page__share-title">Share on</h4>
+  
+
+  <a href="https://twitter.com/intent/tweet?text=%28Somewhat%29+usable+Eclipse+installation+for+Python+development%20https%3A%2F%2Fma-bru.github.io%2Fblog%2Fhowto%2Feclipse-python%2F" class="btn btn--twitter" title="Share on Twitter"><i class="fa fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fma-bru.github.io%2Fblog%2Fhowto%2Feclipse-python%2F" class="btn btn--facebook" title="Share on Facebook"><i class="fa fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://plus.google.com/share?url=https%3A%2F%2Fma-bru.github.io%2Fblog%2Fhowto%2Feclipse-python%2F" class="btn btn--google-plus" title="Share on Google Plus"><i class="fa fa-fw fa-google-plus" aria-hidden="true"></i><span> Google+</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fma-bru.github.io%2Fblog%2Fhowto%2Feclipse-python%2F" class="btn btn--linkedin" title="Share on LinkedIn"><i class="fa fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem/" class="pagination--pager" title="Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems
+">Previous</a>
+    
+    
+      <a href="#" class="pagination--pager disabled">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+      <div class="page__comments">
+  
+    
+        <h4 class="page__comments-title">Leave a Comment</h4>
+        <section id="disqus_thread"></section>
+      
+</div>
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title" itemprop="headline">
+      
+        <a href="https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem/" rel="permalink">Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems
+</a>
+      
+    </h2>
+    
+      <p class="page__meta"><i class="fa fa-clock-o" aria-hidden="true"></i> 
+
+
+
+
+  4 minute read
+</p>
+    
+    <p class="archive__item-excerpt" itemprop="description">Some time ago. I started a blog using Github pages and Jekyll.
+Since I didn’t like any of the default themes I decided to use the modern and clean Minimal Mi...</p>
+  </article>
+</div>
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+    
+      <li><a href="https://facebook.com/brucker.ma"><i class="fa fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
+    
+    
+      <li><a href="http://github.com/ma-bru"><i class="fa fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+    
+    <li><a href="https://ma-bru.github.io/blog/feed.xml"><i class="fa fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2017 Manuel Brucker. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="https://ma-bru.github.io/blog/assets/js/main.min.js"></script>
+
+
+
+
+  
+      
+  <script>
+    var disqus_config = function () {
+      this.page.url = "https://ma-bru.github.io/blog/howto/eclipse-python/";  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = "/howto/eclipse-python"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+      var d = document, s = d.createElement('script');
+      s.src = 'https://blog-idctgzmmxu.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+    
+
+
+
+  </body>
+</html>

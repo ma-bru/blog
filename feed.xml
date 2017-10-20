@@ -1,4 +1,59 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://ma-bru.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ma-bru.github.io/blog/" rel="alternate" type="text/html" /><updated>2017-10-04T12:55:53+02:00</updated><id>https://ma-bru.github.io/blog/</id><title type="html">Blog</title><subtitle>My personal blog</subtitle><author><name>Manuel Brucker</name><uri>http://rmc.dlr.de/rm/de/staff/manuel.brucker/</uri></author><entry><title type="html">Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems</title><link href="https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem/" rel="alternate" type="text/html" title="Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems" /><published>2017-10-03T00:00:00+02:00</published><updated>2017-10-03T00:00:00+02:00</updated><id>https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem</id><content type="html" xml:base="https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem/">&lt;aside class=&quot;sidebar__right&quot;&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://ma-bru.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ma-bru.github.io/blog/" rel="alternate" type="text/html" /><updated>2017-10-20T10:31:19+02:00</updated><id>https://ma-bru.github.io/blog/</id><title type="html">Blog</title><subtitle>My personal blog</subtitle><author><name>Manuel Brucker</name><uri>http://rmc.dlr.de/rm/de/staff/manuel.brucker/</uri></author><entry><title type="html">(Somewhat) usable Eclipse installation for Python development</title><link href="https://ma-bru.github.io/blog/howto/eclipse-python/" rel="alternate" type="text/html" title="(Somewhat) usable Eclipse installation for Python development" /><published>2017-10-20T00:00:00+02:00</published><updated>2017-10-20T00:00:00+02:00</updated><id>https://ma-bru.github.io/blog/howto/eclipse-python</id><content type="html" xml:base="https://ma-bru.github.io/blog/howto/eclipse-python/">&lt;p&gt;I mainly do C++ and Python development.
+For C++ I’m really happy with QtCreator.
+Personally I barely use the Qt framework and despite the name it does an awesome job for any kind of C++ development.
+It’s lightweight, has the best CMake integration I’ve ever seen (It’s 2017, can we please get rid of IDE specific build systems?).
+Plus some nice features like an integrated Clang based syntax checker.&lt;/p&gt;
+
+&lt;p&gt;For Python, I’m not that lucky.
+When googling around you basically find two options for full featured IDEs: PyDev and PyCharm.
+Both of them are painfully slow, Java based, memory hogs.
+Many years ago I had to use Eclipse for a while and decided I have enough of it - there used to be a whole website dedicated to people posting about how much it sucks.
+So I settled with PyCharm.&lt;/p&gt;
+
+&lt;p&gt;Apart from the sluggish responses, Pycharm is ok.
+However some of the advanced features need a commercial licence.
+So in a moment of weakness, I decided to give Eclipse another chance.
+Surprisingly, turns out it’s not all that bad anymore.
+However the default installation options are.&lt;/p&gt;
+
+&lt;p&gt;The standard way to install Eclipse is to go to their &lt;a href=&quot;http://eclipse.org&quot;&gt;website&lt;/a&gt;.
+Follow the download button that brings you to another download button, which downloads a
+weird Windows like installer - Since when is extracting an archive not good enough anymore?
+When you run the installer it gives you a few choices of what flavour of Eclipse you
+want to install.
+All of them are bloated and none of them fitting for Python develoment.&lt;/p&gt;
+
+&lt;p&gt;I decided to give the “Eclipse IDE for Java Developers” a try (it’s the only one that has the word essential in it’s descriptions).
+After installation, which asked me if I trust some certificates (You’re the official installer. You should know!), it finishes installation.
+As expected, after starting it, it feels slow and bloated.
+A look at the installed plugins shows the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://ma-bru.github.io/blog/assets/images/eclipse/eclipse_java.png&quot; alt=&quot;Default Eclipse&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s a lot of stuff I don’t want and didn’t ask for (At least the installer didn’t give me any choice).
+I tried to remove everything I don’t need - I’m looking at you &lt;a href=&quot;http://paranoid-engineering.blogspot.de/2008/07/what-is-eclipse-mylyn-anyway.html&quot;&gt;MyLyn&lt;/a&gt; - which felt like cleaning a Windows system from preinstalled bloatware, but somehow ended up removing too much and eclipse wouldn’t start anymore.
+Since I believe in &lt;a href=&quot;wiki.archlinux.org/index.php/arch_terminology#KISS&quot;&gt;KISS&lt;/a&gt; (funny to mention KISS in a post about eclipse…) I decided it’s the wrong way to start with something already broken and then try to fix it.&lt;/p&gt;
+
+&lt;p&gt;So here’s the sane way to install Eclipse for Python development:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Go to http://archive.eclipse.org/eclipse/downloads/&lt;/li&gt;
+  &lt;li&gt;Download the Platform Runtime Binary for the version you want&lt;/li&gt;
+  &lt;li&gt;Unzip&lt;/li&gt;
+  &lt;li&gt;Start and install PyDev as described in http://www.pydev.org/manual_101_install.html&lt;/li&gt;
+  &lt;li&gt;Make sure to not install the PyDev MyLyn plugins unless you really want them.&lt;/li&gt;
+  &lt;li&gt;Enjoy your clean and fast (well, as clean and fast as possible…) experience:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://ma-bru.github.io/blog/assets/images/eclipse/pydev.png&quot; alt=&quot;Minimal Eclipse&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The only problem I had, was that after importing a Python project from filesystem Eclipse didn’t automatically start the PyDev perspective and I couldn’t find the run and debug buttons.
+But manually switching the perspective worked just fine.&lt;/p&gt;
+
+&lt;p&gt;Now go ahead and install the plugins you really want and need.&lt;/p&gt;</content><author><name>Manuel Brucker</name><uri>http://rmc.dlr.de/rm/de/staff/manuel.brucker/</uri></author><category term="IDE" /><category term="Eclipse" /><category term="Development" /><category term="Python" /><category term="PyDev" /><summary type="html">I mainly do C++ and Python development. For C++ I’m really happy with QtCreator. Personally I barely use the Qt framework and despite the name it does an awesome job for any kind of C++ development. It’s lightweight, has the best CMake integration I’ve ever seen (It’s 2017, can we please get rid of IDE specific build systems?). Plus some nice features like an integrated Clang based syntax checker.</summary></entry><entry><title type="html">Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems</title><link href="https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem/" rel="alternate" type="text/html" title="Howto: Create a blog with Jekyll, Github pages, Minimal Mistakes gems" /><published>2017-10-03T00:00:00+02:00</published><updated>2017-10-03T00:00:00+02:00</updated><id>https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem</id><content type="html" xml:base="https://ma-bru.github.io/blog/howto/jekyll-gh-pages-mm-gem/">&lt;p&gt;Some time ago. I started a blog using Github pages and Jekyll.
+Since I didn’t like any of the default &lt;a href=&quot;https://pages.github.com/themes/&quot;&gt;themes&lt;/a&gt; I decided to use the modern and clean &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/&quot;&gt;Minimal Mistakes&lt;/a&gt; theme.
+Back then (and unfortunately still today when using a Github user/organization page), in order to use the theme, it was necessary to fork the &lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes&quot;&gt;repo&lt;/a&gt; and modify the relevant files.&lt;/p&gt;
+&lt;aside class=&quot;sidebar__right&quot;&gt;
 &lt;nav class=&quot;toc&quot;&gt;
     &lt;header&gt;&lt;h4 class=&quot;nav__title&quot;&gt;&lt;i class=&quot;fa fa-file-text&quot;&gt;&lt;/i&gt; On This Page&lt;/h4&gt;&lt;/header&gt;
 &lt;ul class=&quot;toc__menu&quot; id=&quot;markdown-toc&quot;&gt;
@@ -20,10 +75,7 @@
 
   &lt;/nav&gt;
 &lt;/aside&gt;
-&lt;p&gt;Some time ago. I started a blog using Github pages and Jekyll.
-Since I didn’t like any of the default &lt;a href=&quot;https://pages.github.com/themes/&quot;&gt;themes&lt;/a&gt; I decided to use the modern and clean &lt;a href=&quot;https://mmistakes.github.io/minimal-mistakes/&quot;&gt;Minimal Mistakes&lt;/a&gt; theme.
-Back then (and unfortunately still today when using a Github user/organization page), in order to use the theme, it was necessary to fork the &lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes&quot;&gt;repo&lt;/a&gt; and modify the relevant files.
-I stronglgy disliked doing this.
+&lt;p&gt;I stronglgy disliked doing this.
 Forking and modifying repos should in my opinion only be done if you want to modify the theme and plan to give back some of your modifications.
 For just using it, it’s too much trouble to update the theme when it’s all mixed with your personal modifications.
 As expected, this method only worked until I first tried to update the theme, got overwhelmed by merge conflicts and basically lost interest in the maintenance.&lt;/p&gt;
@@ -191,4 +243,4 @@ cp &lt;span class=&quot;k&quot;&gt;${&lt;/span&gt;&lt;span class=&quot;nv&quot;&
     font-size: 20px; // change to whatever
   }
 }
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Manuel Brucker</name><uri>http://rmc.dlr.de/rm/de/staff/manuel.brucker/</uri></author><category term="Jekyll" /><category term="Github" /><category term="Minimal Mistakes" /><category term="Blog" /><category term="Howto" /><category term="Ruby" /><category term="Bundler" /><summary type="html">On This Page Some time ago. I started a blog using Github pages and Jekyll. Since I didn’t like any of the default themes I decided to use the modern and clean Minimal Mistakes theme. Back then (and unfortunately still today when using a Github user/organization page), in order to use the theme, it was necessary to fork the repo and modify the relevant files. I stronglgy disliked doing this. Forking and modifying repos should in my opinion only be done if you want to modify the theme and plan to give back some of your modifications. For just using it, it’s too much trouble to update the theme when it’s all mixed with your personal modifications. As expected, this method only worked until I first tried to update the theme, got overwhelmed by merge conflicts and basically lost interest in the maintenance.</summary></entry></feed>
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;</content><author><name>Manuel Brucker</name><uri>http://rmc.dlr.de/rm/de/staff/manuel.brucker/</uri></author><category term="Jekyll" /><category term="Github" /><category term="Minimal Mistakes" /><category term="Blog" /><category term="Howto" /><category term="Ruby" /><category term="Bundler" /><summary type="html">Some time ago. I started a blog using Github pages and Jekyll. Since I didn’t like any of the default themes I decided to use the modern and clean Minimal Mistakes theme. Back then (and unfortunately still today when using a Github user/organization page), in order to use the theme, it was necessary to fork the repo and modify the relevant files. On This Page I stronglgy disliked doing this. Forking and modifying repos should in my opinion only be done if you want to modify the theme and plan to give back some of your modifications. For just using it, it’s too much trouble to update the theme when it’s all mixed with your personal modifications. As expected, this method only worked until I first tried to update the theme, got overwhelmed by merge conflicts and basically lost interest in the maintenance.</summary></entry></feed>
