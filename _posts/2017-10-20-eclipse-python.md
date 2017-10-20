@@ -43,16 +43,16 @@ A look at the installed plugins shows the following:
 ![Default Eclipse]({{ site.url }}{{ site.baseurl }}/assets/images/eclipse/eclipse_java.png)
 
 That's a lot of stuff I don't want and didn't ask for (At least the installer didn't give me any choice).
-I tried to remove everything I don't need - I'm looking at you [MyLyn](http://paranoid-engineering.blogspot.de/2008/07/what-is-eclipse-mylyn-anyway.html) - which felt like cleaning a Windows system from pre-installed bloatware, but somehow ended up removing too much and eclipse wouldn't start anymore.
+I tried to remove everything I don't need - I'm looking at you, [MyLyn](http://paranoid-engineering.blogspot.de/2008/07/what-is-eclipse-mylyn-anyway.html) - which felt like cleaning a Windows system from pre-installed bloatware, but somehow ended up removing too much and eclipse wouldn't start anymore.
 Since I believe in [KISS](wiki.archlinux.org/index.php/arch_terminology#KISS) (funny to mention KISS in a post about eclipse...) I decided it's the wrong way to start with something already broken and then try to fix it.
 
 So here's the sane way to install Eclipse for Python development:
 
-1. Go to http://archive.eclipse.org/eclipse/downloads/
+1. Go to <http://archive.eclipse.org/eclipse/downloads/>
 2. Download the Platform Runtime Binary for the version you want
 3. Unzip
 4. Start and install PyDev as described in http://www.pydev.org/manual_101_install.html 
-5. Make sure to not install the PyDev MyLyn plugins unless you really want them.
+5. Make sure not to install the PyDev MyLyn plugins unless you really want them.
 6. Enjoy your clean and fast (well, as clean and fast as possible...) experience:
 
 ![Minimal Eclipse]({{ site.url }}{{ site.baseurl }}/assets/images/eclipse/pydev.png)
