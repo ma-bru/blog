@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://ma-bru.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ma-bru.github.io/blog/" rel="alternate" type="text/html" /><updated>2017-10-20T10:31:19+02:00</updated><id>https://ma-bru.github.io/blog/</id><title type="html">Blog</title><subtitle>My personal blog</subtitle><author><name>Manuel Brucker</name><uri>http://rmc.dlr.de/rm/de/staff/manuel.brucker/</uri></author><entry><title type="html">(Somewhat) usable Eclipse installation for Python development</title><link href="https://ma-bru.github.io/blog/howto/eclipse-python/" rel="alternate" type="text/html" title="(Somewhat) usable Eclipse installation for Python development" /><published>2017-10-20T00:00:00+02:00</published><updated>2017-10-20T00:00:00+02:00</updated><id>https://ma-bru.github.io/blog/howto/eclipse-python</id><content type="html" xml:base="https://ma-bru.github.io/blog/howto/eclipse-python/">&lt;p&gt;I mainly do C++ and Python development.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.0">Jekyll</generator><link href="https://ma-bru.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://ma-bru.github.io/blog/" rel="alternate" type="text/html" /><updated>2017-10-20T14:25:28+02:00</updated><id>https://ma-bru.github.io/blog/</id><title type="html">Blog</title><subtitle>My personal blog</subtitle><author><name>Manuel Brucker</name><uri>http://rmc.dlr.de/rm/de/staff/manuel.brucker/</uri></author><entry><title type="html">(Somewhat) usable Eclipse installation for Python development</title><link href="https://ma-bru.github.io/blog/howto/eclipse-python/" rel="alternate" type="text/html" title="(Somewhat) usable Eclipse installation for Python development" /><published>2017-10-20T00:00:00+02:00</published><updated>2017-10-20T00:00:00+02:00</updated><id>https://ma-bru.github.io/blog/howto/eclipse-python</id><content type="html" xml:base="https://ma-bru.github.io/blog/howto/eclipse-python/">&lt;p&gt;I mainly do C++ and Python development.
 For C++ I’m really happy with QtCreator.
 Personally I barely use the Qt framework and despite the name it does an awesome job for any kind of C++ development.
 It’s lightweight, has the best CMake integration I’ve ever seen (It’s 2017, can we please get rid of IDE specific build systems?).
@@ -10,7 +10,7 @@ Both of them are painfully slow, Java based, memory hogs.
 Many years ago I had to use Eclipse for a while and decided I have enough of it - there used to be a whole website dedicated to people posting about how much it sucks.
 So I settled with PyCharm.&lt;/p&gt;
 
-&lt;p&gt;Apart from the sluggish responses, Pycharm is ok.
+&lt;p&gt;Apart from the sluggish responses, Pycharm is OK.
 However some of the advanced features need a commercial licence.
 So in a moment of weakness, I decided to give Eclipse another chance.
 Surprisingly, turns out it’s not all that bad anymore.
@@ -21,7 +21,7 @@ Follow the download button that brings you to another download button, which dow
 weird Windows like installer - Since when is extracting an archive not good enough anymore?
 When you run the installer it gives you a few choices of what flavour of Eclipse you
 want to install.
-All of them are bloated and none of them fitting for Python develoment.&lt;/p&gt;
+All of them are bloated and none of them is fitting for Python development.&lt;/p&gt;
 
 &lt;p&gt;I decided to give the “Eclipse IDE for Java Developers” a try (it’s the only one that has the word essential in it’s descriptions).
 After installation, which asked me if I trust some certificates (You’re the official installer. You should know!), it finishes installation.
@@ -31,7 +31,7 @@ A look at the installed plugins shows the following:&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;https://ma-bru.github.io/blog/assets/images/eclipse/eclipse_java.png&quot; alt=&quot;Default Eclipse&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;That’s a lot of stuff I don’t want and didn’t ask for (At least the installer didn’t give me any choice).
-I tried to remove everything I don’t need - I’m looking at you &lt;a href=&quot;http://paranoid-engineering.blogspot.de/2008/07/what-is-eclipse-mylyn-anyway.html&quot;&gt;MyLyn&lt;/a&gt; - which felt like cleaning a Windows system from preinstalled bloatware, but somehow ended up removing too much and eclipse wouldn’t start anymore.
+I tried to remove everything I don’t need - I’m looking at you &lt;a href=&quot;http://paranoid-engineering.blogspot.de/2008/07/what-is-eclipse-mylyn-anyway.html&quot;&gt;MyLyn&lt;/a&gt; - which felt like cleaning a Windows system from pre-installed bloatware, but somehow ended up removing too much and eclipse wouldn’t start anymore.
 Since I believe in &lt;a href=&quot;wiki.archlinux.org/index.php/arch_terminology#KISS&quot;&gt;KISS&lt;/a&gt; (funny to mention KISS in a post about eclipse…) I decided it’s the wrong way to start with something already broken and then try to fix it.&lt;/p&gt;
 
 &lt;p&gt;So here’s the sane way to install Eclipse for Python development:&lt;/p&gt;
