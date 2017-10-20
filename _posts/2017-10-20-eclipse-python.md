@@ -22,7 +22,7 @@ Both of them are painfully slow, Java based, memory hogs.
 Many years ago I had to use Eclipse for a while and decided I have enough of it - there used to be a whole website dedicated to people posting about how much it sucks.
 So I settled with PyCharm.
 
-Apart from the sluggish responses, Pycharm is ok.
+Apart from the sluggish responses, Pycharm is OK.
 However some of the advanced features need a commercial licence.
 So in a moment of weakness, I decided to give Eclipse another chance.
 Surprisingly, turns out it's not all that bad anymore.
@@ -33,7 +33,7 @@ Follow the download button that brings you to another download button, which dow
 weird Windows like installer - Since when is extracting an archive not good enough anymore?
 When you run the installer it gives you a few choices of what flavour of Eclipse you
 want to install.
-All of them are bloated and none of them fitting for Python develoment.
+All of them are bloated and none of them is fitting for Python development.
 
 I decided to give the "Eclipse IDE for Java Developers" a try (it's the only one that has the word essential in it's descriptions).
 After installation, which asked me if I trust some certificates (You're the official installer. You should know!), it finishes installation.
@@ -43,7 +43,7 @@ A look at the installed plugins shows the following:
 ![Default Eclipse]({{ site.url }}{{ site.baseurl }}/assets/images/eclipse/eclipse_java.png)
 
 That's a lot of stuff I don't want and didn't ask for (At least the installer didn't give me any choice).
-I tried to remove everything I don't need - I'm looking at you [MyLyn](http://paranoid-engineering.blogspot.de/2008/07/what-is-eclipse-mylyn-anyway.html) - which felt like cleaning a Windows system from preinstalled bloatware, but somehow ended up removing too much and eclipse wouldn't start anymore.
+I tried to remove everything I don't need - I'm looking at you [MyLyn](http://paranoid-engineering.blogspot.de/2008/07/what-is-eclipse-mylyn-anyway.html) - which felt like cleaning a Windows system from pre-installed bloatware, but somehow ended up removing too much and eclipse wouldn't start anymore.
 Since I believe in [KISS](wiki.archlinux.org/index.php/arch_terminology#KISS) (funny to mention KISS in a post about eclipse...) I decided it's the wrong way to start with something already broken and then try to fix it.
 
 So here's the sane way to install Eclipse for Python development:
