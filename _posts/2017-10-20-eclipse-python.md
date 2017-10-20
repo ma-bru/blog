@@ -35,7 +35,7 @@ When you run the installer it gives you a few choices of what flavour of Eclipse
 want to install.
 All of them are bloated and none of them is fitting for Python development.
 
-I decided to give the "Eclipse IDE for Java Developers" a try (it's the only one that has the word essential in it's descriptions).
+I decided to give the "Eclipse IDE for Java Developers" a try (it's the only one that has the word essential in it's description).
 After installation, which asked me if I trust some certificates (You're the official installer. You should know!), it finishes installation.
 As expected, after starting it, it feels slow and bloated.
 A look at the installed plugins shows the following:
